@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 11489952}
   - component: {fileID: 11468384}
   - component: {fileID: 10825254}
+  - component: {fileID: 9180925830733752864}
   m_Layer: 0
   m_Name: shot_prefab
-  m_TagString: Untagged
+  m_TagString: LaserShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 136330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -117,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb039d3a64491f4ebfc852d25b5ee70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_target: {x: 0, y: 0, z: 0}
+  collisionExplosion: {fileID: 0}
+  speed: 50
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0
@@ -128,9 +132,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9467573, a: 1}
   m_Intensity: 2
-  m_Range: 300
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -179,3 +183,16 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &9180925830733752864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.617365, y: 6.674759, z: 55.330006}
+  m_Center: {x: 0, y: -0.55827755, z: 24.999994}

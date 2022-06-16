@@ -50,7 +50,7 @@ public class Scanning : State
                 if (Physics.Raycast(ray, out hit))
                 {
                     SpawnPrefab(_raycastHits[0].pose.position);
-                    ChangeState("ItemPlaced");
+                    ChangeState("Shooting");
                 }
             }
         }
