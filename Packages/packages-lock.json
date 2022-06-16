@@ -84,16 +84,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.learn.iet-framework": {
-      "version": "2.2.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.editorcoroutines": "1.0.0",
-        "com.unity.settings-manager": "1.0.3"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
       "depth": 2,
@@ -121,7 +111,7 @@
     },
     "com.unity.settings-manager": {
       "version": "1.0.3",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -285,7 +275,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.2.0",
+      "version": "4.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
