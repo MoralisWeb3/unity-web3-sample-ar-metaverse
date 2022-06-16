@@ -354,9 +354,7 @@ GameObject:
   - component: {fileID: 388525031}
   - component: {fileID: 388525030}
   - component: {fileID: 388525032}
-  - component: {fileID: 388525034}
   - component: {fileID: 388525033}
-  - component: {fileID: 388525035}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -400,7 +398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
@@ -421,32 +419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RaycastPrefab: {fileID: 0}
---- !u!114 &388525034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AnchorPrefab: {fileID: 0}
---- !u!114 &388525035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388525029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788587e994f1943f3856c1c332db429b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AnchorPrefab: {fileID: 0}
 --- !u!1 &451775333
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &530648139
 Transform:
   m_ObjectHideFlags: 0
@@ -910,8 +882,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46ee77614acefe49bc06fc1fce6a2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arObject: {fileID: 530648138}
+  arSessionOrigin: {fileID: 388525030}
   arRaycastManager: {fileID: 388525033}
+  arPlaneManager: {fileID: 388525032}
   cratePrefab: {fileID: 1899557385691984017, guid: 58c8ae5e9edbe224aa63039b8fe8accc,
     type: 3}
 --- !u!1 &590108956

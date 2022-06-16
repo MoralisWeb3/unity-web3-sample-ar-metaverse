@@ -29522,16 +29522,18 @@ struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670  : public UIBehaviou
 // Scanning
 struct Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB  : public State_tF832497D3B65D45155D98514129D7E09E7AED137
 {
-	// UnityEngine.GameObject Scanning::arObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arObject_5;
+	// UnityEngine.XR.ARFoundation.ARSessionOrigin Scanning::arSessionOrigin
+	ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3* ___arSessionOrigin_5;
 	// UnityEngine.XR.ARFoundation.ARRaycastManager Scanning::arRaycastManager
 	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___arRaycastManager_6;
+	// UnityEngine.XR.ARFoundation.ARPlaneManager Scanning::arPlaneManager
+	ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* ___arPlaneManager_7;
 	// UnityEngine.GameObject Scanning::cratePrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cratePrefab_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cratePrefab_8;
 	// System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARRaycastHit> Scanning::_raycastHits
-	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ____raycastHits_8;
+	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ____raycastHits_9;
 	// UnityEngine.Camera Scanning::_arCamera
-	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____arCamera_9;
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____arCamera_10;
 };
 
 // UnityEngine.UI.ScrollRect

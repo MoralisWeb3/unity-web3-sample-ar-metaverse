@@ -334,6 +334,8 @@ struct ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928;
 struct ARPlaneMeshVisualizer_t21838C8E2676AC524939E67CB965925E924E018F;
 // UnityEngine.XR.ARFoundation.ARRaycastManager
 struct ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44;
+// UnityEngine.XR.ARFoundation.ARSessionOrigin
+struct ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3;
 // Mono.Security.ASN1
 struct ASN1_t33549D58797C9C33AA83F13AD184EAA00C584A6F;
 // System.Action
@@ -12471,16 +12473,18 @@ struct OpenXRHmd_t052F4002C0C8E4DAFB34A1EBB6BE407292E2BE00  : public XRHMD_t2AB6
 // Scanning
 struct Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB  : public State_tF832497D3B65D45155D98514129D7E09E7AED137
 {
-	// UnityEngine.GameObject Scanning::arObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arObject_5;
+	// UnityEngine.XR.ARFoundation.ARSessionOrigin Scanning::arSessionOrigin
+	ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3* ___arSessionOrigin_5;
 	// UnityEngine.XR.ARFoundation.ARRaycastManager Scanning::arRaycastManager
 	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___arRaycastManager_6;
+	// UnityEngine.XR.ARFoundation.ARPlaneManager Scanning::arPlaneManager
+	ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* ___arPlaneManager_7;
 	// UnityEngine.GameObject Scanning::cratePrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cratePrefab_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cratePrefab_8;
 	// System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARRaycastHit> Scanning::_raycastHits
-	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ____raycastHits_8;
+	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ____raycastHits_9;
 	// UnityEngine.Camera Scanning::_arCamera
-	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____arCamera_9;
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____arCamera_10;
 };
 
 // UnityEngine.InputSystem.XR.XRControllerWithRumble
@@ -13235,9 +13239,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable12224[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable12225[5] = 
 {
 	static_cast<int32_t>(offsetof(SpawnableManager_tC029DDD2FD6DB3F1396C3546F6F6A7F53A395730, ___arRaycastManager_4)),static_cast<int32_t>(offsetof(SpawnableManager_tC029DDD2FD6DB3F1396C3546F6F6A7F53A395730, ___spawnablePrefab_5)),static_cast<int32_t>(offsetof(SpawnableManager_tC029DDD2FD6DB3F1396C3546F6F6A7F53A395730, ____raycastHits_6)),static_cast<int32_t>(offsetof(SpawnableManager_tC029DDD2FD6DB3F1396C3546F6F6A7F53A395730, ____arCamera_7)),static_cast<int32_t>(offsetof(SpawnableManager_tC029DDD2FD6DB3F1396C3546F6F6A7F53A395730, ____spawnedObject_8)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable12231[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable12231[6] = 
 {
-	static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___arObject_5)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___arRaycastManager_6)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___cratePrefab_7)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ____raycastHits_8)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ____arCamera_9)),};
+	static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___arSessionOrigin_5)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___arRaycastManager_6)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___arPlaneManager_7)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ___cratePrefab_8)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ____raycastHits_9)),static_cast<int32_t>(offsetof(Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB, ____arCamera_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable12232[3] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,};

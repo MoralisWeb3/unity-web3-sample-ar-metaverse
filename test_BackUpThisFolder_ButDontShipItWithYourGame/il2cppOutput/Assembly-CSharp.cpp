@@ -71,6 +71,8 @@ struct Action_1_t11340E5174173030E076A75316E18A395082F8A5;
 struct Action_1_t762BEDF03B3FAD9E52246AF6B4291030B8085074;
 // System.Action`1<UnityEngine.XR.ARFoundation.ARPlanesChangedEventArgs>
 struct Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560;
+// System.Action`1<UnityEngine.XR.ARFoundation.ARTrackablesParentTransformChangedEventArgs>
+struct Action_1_t2096FCE7327B89C5101BFB38155839F3166605FB;
 // System.Action`1<Pixelplacement.ColliderButton>
 struct Action_1_t9064088B3ADA8C5ED8779B2441C4CA1A05F43535;
 // System.Action`1<UnityEngine.Color>
@@ -671,6 +673,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709
 IL2CPP_EXTERN_C String_t* _stringLiteralDCB5B2B9C2B266BD2ECA1C7E5670C775930FBBEE;
 IL2CPP_EXTERN_C String_t* _stringLiteralE7368DEC4F21498A345AAD9CF70F071E2B2C43CF;
 IL2CPP_EXTERN_C String_t* _stringLiteralEE2D567FC7EF3BE119B8AF8A98C4DC66261DC632;
+IL2CPP_EXTERN_C String_t* _stringLiteralEE46594386E5D6CE9502FA51F7CCAC04A75D30BD;
 IL2CPP_EXTERN_C String_t* _stringLiteralF0534BF75E937289BC1A8C09778592CEF7E66E99;
 IL2CPP_EXTERN_C String_t* _stringLiteralF3D5E17E0742EF3ACD7E1106C2E56AB77FA2F6CA;
 IL2CPP_EXTERN_C String_t* _stringLiteralF449ECB799492B6E94508C177821573A9593DCDE;
@@ -3134,6 +3137,19 @@ struct ARPlaneMeshVisualizer_t21838C8E2676AC524939E67CB965925E924E018F  : public
 	ARPlane_tB2F02248AD4019D141553B25C1B9005913E98EF0* ___m_Plane_8;
 };
 
+// UnityEngine.XR.ARFoundation.ARSessionOrigin
+struct ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// UnityEngine.Camera UnityEngine.XR.ARFoundation.ARSessionOrigin::m_Camera
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___m_Camera_4;
+	// UnityEngine.Transform UnityEngine.XR.ARFoundation.ARSessionOrigin::<trackablesParent>k__BackingField
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___U3CtrackablesParentU3Ek__BackingField_5;
+	// System.Action`1<UnityEngine.XR.ARFoundation.ARTrackablesParentTransformChangedEventArgs> UnityEngine.XR.ARFoundation.ARSessionOrigin::trackablesParentTransformChanged
+	Action_1_t2096FCE7327B89C5101BFB38155839F3166605FB* ___trackablesParentTransformChanged_6;
+	// UnityEngine.GameObject UnityEngine.XR.ARFoundation.ARSessionOrigin::m_ContentOffsetGameObject
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___m_ContentOffsetGameObject_7;
+};
+
 // UnityEngine.XR.ARFoundation.ARTrackable
 struct ARTrackable_t1D98417758C08E98A333CDEC0C2C1688CE10B2E0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -3882,16 +3898,18 @@ struct Minting_tA99C4E761652B88FCB242BACEC689A8920FF6BE1  : public State_tF83249
 // Scanning
 struct Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB  : public State_tF832497D3B65D45155D98514129D7E09E7AED137
 {
-	// UnityEngine.GameObject Scanning::arObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arObject_5;
+	// UnityEngine.XR.ARFoundation.ARSessionOrigin Scanning::arSessionOrigin
+	ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3* ___arSessionOrigin_5;
 	// UnityEngine.XR.ARFoundation.ARRaycastManager Scanning::arRaycastManager
 	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___arRaycastManager_6;
+	// UnityEngine.XR.ARFoundation.ARPlaneManager Scanning::arPlaneManager
+	ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* ___arPlaneManager_7;
 	// UnityEngine.GameObject Scanning::cratePrefab
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cratePrefab_7;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___cratePrefab_8;
 	// System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARRaycastHit> Scanning::_raycastHits
-	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ____raycastHits_8;
+	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ____raycastHits_9;
 	// UnityEngine.Camera Scanning::_arCamera
-	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____arCamera_9;
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ____arCamera_10;
 };
 
 // UnityEngine.UI.Selectable
@@ -5328,14 +5346,14 @@ inline GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* Object_Instantiate_
 {
 	return ((  GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974, const RuntimeMethod*))Object_Instantiate_TisRuntimeObject_m2A2DD50EC8EB54C91AF71E02DFD6969174D82B08_gshared)(___original0, ___position1, ___rotation2, method);
 }
-// UnityEngine.GameObject Pixelplacement.State::Next(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* State_Next_m5BD4E0F1E69FB92151D60436A67B4E6F507DD4DA (State_tF832497D3B65D45155D98514129D7E09E7AED137* __this, bool ___exitIfLast0, const RuntimeMethod* method) ;
+// System.Void Pixelplacement.State::ChangeState(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void State_ChangeState_mADE2B25EB95817B07123CCA16CE4FE7104917FF7 (State_tF832497D3B65D45155D98514129D7E09E7AED137* __this, String_t* ___state0, const RuntimeMethod* method) ;
 // System.Void Pixelplacement.State::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void State__ctor_m3ECA5CBF8F7EB9BA0EB7CDB76070A763380C0786 (State_tF832497D3B65D45155D98514129D7E09E7AED137* __this, const RuntimeMethod* method) ;
 // System.Void Pixelplacement.StateMachine::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StateMachine__ctor_m1CBFA88DA212247A0A9AD9C5C46936A8924E7295 (StateMachine_tF639CC5DA6CDE2FDD148F72D67C4BE23ADAC4E42* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.GameObject::SetActive(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, bool ___value0, const RuntimeMethod* method) ;
+// UnityEngine.Camera UnityEngine.XR.ARFoundation.ARSessionOrigin::get_camera()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ARSessionOrigin_get_camera_m5D908BC3C882C5BA0E21A07E4BB5093AF0AD5830_inline (ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3* __this, const RuntimeMethod* method) ;
 // System.Void Scanning::SpawnPrefab(UnityEngine.Vector3)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning_SpawnPrefab_mD00862E68E8168D1E9682C7EBE626ACD61B0CF4D (Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___spawnPosition0, const RuntimeMethod* method) ;
 // T[] System.Collections.Generic.List`1<UnityEngine.Transform>::ToArray()
@@ -5345,6 +5363,8 @@ inline TransformU5BU5D_tBB9C5F5686CAE82E3D97D43DF0F3D68ABF75EC24* List_1_ToArray
 }
 // UnityEngine.Vector3 UnityEngine.Transform::get_position()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+// System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, bool ___value0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.LineRenderer::set_positionCount(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LineRenderer_set_positionCount_m2001FB4044053895ECBE897AB833284F3300B205 (LineRenderer_tEFEF960672DB69CB14B6D181FAE6292F0CF8B63D* __this, int32_t ___value0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Renderer::set_enabled(System.Boolean)
@@ -8952,10 +8972,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnableManager__ctor_m5E989BEEF4E8A6A1
 // System.Void Authenticating::ConnectionSuccessful()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Authenticating_ConnectionSuccessful_m115739F0ACF1112361D5C6E9ED9825F532981AAE (Authenticating_t876B587235C903BE50A5BB5694ABA11799E9C68F* __this, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
 	{
-		// Next();
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0;
-		L_0 = State_Next_m5BD4E0F1E69FB92151D60436A67B4E6F507DD4DA(__this, (bool)0, NULL);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEE46594386E5D6CE9502FA51F7CCAC04A75D30BD);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// ChangeState("Scanning");
+		State_ChangeState_mADE2B25EB95817B07123CCA16CE4FE7104917FF7(__this, _stringLiteralEE46594386E5D6CE9502FA51F7CCAC04A75D30BD, NULL);
 		// }
 		return;
 	}
@@ -9088,27 +9113,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Minting__ctor_m75A0D41722941EDA9E5996F0A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// System.Void Scanning::Awake()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning_Awake_m6FEA7F630EE16BD835F7DB3DDCB7CE44B339ECAF (Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB* __this, const RuntimeMethod* method) 
-{
-	{
-		// _arCamera = Camera.main;
-		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_0;
-		L_0 = Camera_get_main_mF222B707D3BF8CC9C7544609EFC71CFB62E81D43(NULL);
-		__this->____arCamera_9 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____arCamera_9), (void*)L_0);
-		// }
-		return;
-	}
-}
 // System.Void Scanning::OnEnable()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning_OnEnable_m4AF863AD2B3D68FC2F2766E149332AD6A7A912C4 (Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB* __this, const RuntimeMethod* method) 
 {
 	{
-		// arObject.SetActive(true);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___arObject_5;
+		// _arCamera = arSessionOrigin.camera;
+		ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3* L_0 = __this->___arSessionOrigin_5;
 		NullCheck(L_0);
-		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)1, NULL);
+		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_1;
+		L_1 = ARSessionOrigin_get_camera_m5D908BC3C882C5BA0E21A07E4BB5093AF0AD5830_inline(L_0, NULL);
+		__this->____arCamera_10 = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____arCamera_10), (void*)L_1);
+		// arPlaneManager.enabled = true;
+		ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* L_2 = __this->___arPlaneManager_7;
+		NullCheck(L_2);
+		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_2, (bool)1, NULL);
+		// }
+		return;
+	}
+}
+// System.Void Scanning::OnDisable()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning_OnDisable_m0CFA6E140193FF2488E4D196A5A8E5DA65FDD70E (Scanning_t22341BE307DA20CF088F69FF2B6F010116442CDB* __this, const RuntimeMethod* method) 
+{
+	{
+		// arPlaneManager.enabled = false;
+		ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* L_0 = __this->___arPlaneManager_7;
+		NullCheck(L_0);
+		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_0, (bool)0, NULL);
 		// }
 		return;
 	}
@@ -9147,7 +9178,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning_Update_m059EE7EF8D8CFD04A8A4341
 IL_0008:
 	{
 		// Ray ray = _arCamera.ScreenPointToRay(Input.GetTouch(0).position);
-		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_1 = __this->____arCamera_9;
+		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_1 = __this->____arCamera_10;
 		Touch_t03E51455ED508492B3F278903A0114FA0E87B417 L_2;
 		L_2 = Input_GetTouch_m37572A728DAE284D3ED1272690E635A61D167AD4(0, NULL);
 		V_2 = L_2;
@@ -9166,7 +9197,7 @@ IL_0008:
 		V_2 = L_7;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8;
 		L_8 = Touch_get_position_m41B9EB0F3F3E1BE98CEB388253A9E31979CB964A((&V_2), NULL);
-		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_9 = __this->____raycastHits_8;
+		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_9 = __this->____raycastHits_9;
 		NullCheck(L_6);
 		bool L_10;
 		L_10 = ARRaycastManager_Raycast_mF56A1E2D7CBB61131E4D844ADA9D0CC1F6B53EAC(L_6, L_8, L_9, (-1), NULL);
@@ -9199,7 +9230,7 @@ IL_0008:
 	}
 	{
 		// SpawnPrefab(_raycastHits[0].pose.position);
-		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_15 = __this->____raycastHits_8;
+		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_15 = __this->____raycastHits_9;
 		NullCheck(L_15);
 		ARRaycastHit_tB32B5606815B8A7DF479C00187A852F8D20E3B70 L_16;
 		L_16 = List_1_get_Item_m443F0D48247776D4257E06597AF794BCF6D8020F(L_15, 0, List_1_get_Item_m443F0D48247776D4257E06597AF794BCF6D8020F_RuntimeMethod_var);
@@ -9228,7 +9259,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning_SpawnPrefab_mD00862E68E8168D1E9
 	}
 	{
 		// Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___cratePrefab_7;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___cratePrefab_8;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1 = ___spawnPosition0;
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_2;
 		L_2 = Quaternion_get_identity_mB9CAEEB21BC81352CBF32DB9664BFC06FA7EA27B_inline(NULL);
@@ -9254,8 +9285,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Scanning__ctor_m33D87F28B428479F8B926106
 		List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* L_0 = (List_1_t0754071572EFE7A5C92A59495D2524FC935364E3*)il2cpp_codegen_object_new(List_1_t0754071572EFE7A5C92A59495D2524FC935364E3_il2cpp_TypeInfo_var);
 		NullCheck(L_0);
 		List_1__ctor_m6B5722DD0A8C0D3D4A1656C5A5E8D0A784DC85B9(L_0, List_1__ctor_m6B5722DD0A8C0D3D4A1656C5A5E8D0A784DC85B9_RuntimeMethod_var);
-		__this->____raycastHits_8 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____raycastHits_8), (void*)L_0);
+		__this->____raycastHits_9 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____raycastHits_9), (void*)L_0);
 		State__ctor_m3ECA5CBF8F7EB9BA0EB7CDB76070A763380C0786(__this, NULL);
 		return;
 	}
@@ -27413,6 +27444,14 @@ IL_0009:
 	{
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_1 = V_0;
 		return L_1;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ARSessionOrigin_get_camera_m5D908BC3C882C5BA0E21A07E4BB5093AF0AD5830_inline (ARSessionOrigin_tE7B28A1A19500BCC02711397A19E330425830BC3* __this, const RuntimeMethod* method) 
+{
+	{
+		// get { return m_Camera; }
+		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_0 = __this->___m_Camera_4;
+		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_green_m336EB73DD4A5B11B7F405CF4BC7F37A466FB4FF7_inline (const RuntimeMethod* method) 

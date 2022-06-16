@@ -7,8 +7,9 @@ using UnityEngine.XR.ARFoundation;
 public class Scanning : State
 {
     [Header("AR Related")]
-    [SerializeField] private GameObject arObject;
+    [SerializeField] private ARSessionOrigin arSessionOrigin;
     [SerializeField] private ARRaycastManager arRaycastManager;
+    [SerializeField] private ARPlaneManager arPlaneManager;
     
     [Header("Spawnable Prefab")]
     [SerializeField] private GameObject cratePrefab;
@@ -16,14 +17,15 @@ public class Scanning : State
     private readonly List<ARRaycastHit> _raycastHits = new List<ARRaycastHit>();
     private Camera _arCamera;
 
-    private void Awake()
-    {
-        _arCamera = Camera.main;
-    }
-
     private void OnEnable()
     {
-        arObject.SetActive(true);
+        _arCamera = arSessionOrigin.camera;
+        arPlaneManager.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        arPlaneManager.enabled = false;
     }
 
     void Update()
