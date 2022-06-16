@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawnable
+  - QrConnectMenu
+  - IOSConnectMenu
+  - LaserShot
   layers:
   - Default
   - TransparentFX
