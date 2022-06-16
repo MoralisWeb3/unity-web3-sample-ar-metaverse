@@ -5,7 +5,7 @@ public class Authenticating : State
 {
     private void OnEnable()
     {
-        
+        //TODO stop plane scanning
     }
 
     public void ConnectionSuccessful()

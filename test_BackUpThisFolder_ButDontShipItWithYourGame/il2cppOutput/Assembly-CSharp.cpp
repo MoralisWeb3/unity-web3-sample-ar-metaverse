@@ -10243,7 +10243,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ShotBehavior_explode_mE7B0A73C18F3FB4D60
 		}
 	}
 	{
-		// GameObject explosion = (GameObject)Instantiate(
+		// GameObject explosion = Instantiate(
 		//     collisionExplosion, transform.position, transform.rotation);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___collisionExplosion_5;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
