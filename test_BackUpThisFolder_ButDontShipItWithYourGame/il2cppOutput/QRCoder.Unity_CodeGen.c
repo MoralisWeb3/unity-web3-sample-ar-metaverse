@@ -38,13 +38,13 @@ static Il2CppMethodPointer s_methodPointers[7] =
 };
 static const int32_t s_InvokerIndices[7] = 
 {
-	11472,
-	9206,
-	8126,
-	1945,
-	15153,
-	1936,
+	11487,
+	9218,
+	8136,
+	1948,
+	15170,
 	1939,
+	1942,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_QRCoder_Unity_CodeGenModule;
 const Il2CppCodeGenModule g_QRCoder_Unity_CodeGenModule = 
