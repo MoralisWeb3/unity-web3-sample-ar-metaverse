@@ -1,19 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
 
 public class GameManager : StateMachine
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public GameObject spawnedObject;
 
-    // Update is called once per frame
-    void Update()
+    public void SetSpawnedObject(GameObject obj)
     {
-        
+        spawnedObject = obj;
     }
 }

@@ -13,9 +13,16 @@ public class Scanning : State
     
     [Header("Spawnable Prefab")]
     [SerializeField] private GameObject cratePrefab;
-    
+
+    private GameManager _gameManager;
     private readonly List<ARRaycastHit> _raycastHits = new List<ARRaycastHit>();
     private Camera _arCamera;
+
+    private void Awake()
+    {
+        //Assuming we're child of the GameManager
+        _gameManager = GetComponentInParent<GameManager>();
+    }
 
     private void OnEnable()
     {
@@ -43,6 +50,7 @@ public class Scanning : State
                 if (Physics.Raycast(ray, out hit))
                 {
                     SpawnPrefab(_raycastHits[0].pose.position);
+                    ChangeState("ItemPlaced");
                 }
             }
         }
@@ -50,6 +58,7 @@ public class Scanning : State
 
     private void SpawnPrefab(Vector3 spawnPosition)
     {
-        Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
+        GameObject obj = Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
+        _gameManager.SetSpawnedObject(obj);
     }
 }
