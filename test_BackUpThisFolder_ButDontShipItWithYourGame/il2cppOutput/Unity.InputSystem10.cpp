@@ -2818,7 +2818,7 @@ IL_0013_1:
 				Type_t* L_15 = V_0;
 				NullCheck(L_14);
 				bool L_16;
-				L_16 = VirtualFuncInvoker1< bool, Type_t* >::Invoke(21 /* System.Boolean System.Type::IsAssignableFrom(System.Type) */, L_14, L_15);
+				L_16 = VirtualFuncInvoker1< bool, Type_t* >::Invoke(22 /* System.Boolean System.Type::IsAssignableFrom(System.Type) */, L_14, L_15);
 				if (!L_16)
 				{
 					goto IL_0047_1;
@@ -2840,7 +2840,7 @@ IL_0047_1:
 				Type_t* L_19 = V_3;
 				NullCheck(L_18);
 				bool L_20;
-				L_20 = VirtualFuncInvoker1< bool, Type_t* >::Invoke(21 /* System.Boolean System.Type::IsAssignableFrom(System.Type) */, L_18, L_19);
+				L_20 = VirtualFuncInvoker1< bool, Type_t* >::Invoke(22 /* System.Boolean System.Type::IsAssignableFrom(System.Type) */, L_18, L_19);
 				if (L_20)
 				{
 					goto IL_005b_1;
