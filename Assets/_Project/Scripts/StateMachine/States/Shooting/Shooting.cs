@@ -16,7 +16,7 @@ public class Shooting : State
         Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f)); //Center of the screen
         if (Physics.Raycast(ray, out hit, range))
         {
-            GameObject laser = Instantiate(laserShotPrefab, originT.position, Quaternion.identity);
+            GameObject laser = Instantiate(laserShotPrefab, originT.position, originT.transform.rotation);
             laser.GetComponent<ShotBehavior>().setTarget(hit.point);
             Destroy(laser, 2f);
         }

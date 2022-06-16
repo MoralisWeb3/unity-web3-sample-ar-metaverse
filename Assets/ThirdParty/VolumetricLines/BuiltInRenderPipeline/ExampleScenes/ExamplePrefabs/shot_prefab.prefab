@@ -104,7 +104,7 @@ MonoBehaviour:
   m_startPos: {x: 0, y: 0, z: 0}
   m_endPos: {x: 0, y: 0, z: 50}
   m_lineColor: {r: 0.034482718, g: 1, b: 0, a: 0}
-  m_lineWidth: 66
+  m_lineWidth: 61.29
   m_lightSaberFactor: 0.747
 --- !u!114 &11468384
 MonoBehaviour:
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {x: 0, y: 0, z: 0}
   collisionExplosion: {fileID: 0}
-  speed: 50
+  speed: 3
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0.9467573, a: 1}
   m_Intensity: 2
-  m_Range: 50
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

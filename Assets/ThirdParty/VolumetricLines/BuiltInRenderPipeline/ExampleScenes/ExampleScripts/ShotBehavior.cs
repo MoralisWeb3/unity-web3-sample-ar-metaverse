@@ -10,7 +10,7 @@ public class ShotBehavior : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
         float step = speed * Time.deltaTime;

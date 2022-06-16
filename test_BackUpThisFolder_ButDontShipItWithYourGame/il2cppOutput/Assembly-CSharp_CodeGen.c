@@ -82,8 +82,8 @@ extern void CreateSinShapedLineStrip_Start_m9D189D8831881919D57ED547A337E039B29E
 extern void CreateSinShapedLineStrip_OnDrawGizmos_mF0A2E105C875BD67CCD29D413768839FB9D065ED (void);
 // 0x00000023 System.Void CreateSinShapedLineStrip::.ctor()
 extern void CreateSinShapedLineStrip__ctor_m530859F5A7C96C8426BA1BA2AA7BD85938F5C4BD (void);
-// 0x00000024 System.Void ShotBehavior::Update()
-extern void ShotBehavior_Update_mC627B0608EA9A18BD107E2767BB59A3210C7AE8D (void);
+// 0x00000024 System.Void ShotBehavior::FixedUpdate()
+extern void ShotBehavior_FixedUpdate_m7D899790507E1409498319BF2B40D0E2A9BF6EEC (void);
 // 0x00000025 System.Void ShotBehavior::setTarget(UnityEngine.Vector3)
 extern void ShotBehavior_setTarget_m5F79C2C4326251BCACC53EB8B7B407FC5D74608A (void);
 // 0x00000026 System.Void ShotBehavior::explode()
@@ -1478,7 +1478,7 @@ static Il2CppMethodPointer s_methodPointers[721] =
 	CreateSinShapedLineStrip_Start_m9D189D8831881919D57ED547A337E039B29E90FE,
 	CreateSinShapedLineStrip_OnDrawGizmos_mF0A2E105C875BD67CCD29D413768839FB9D065ED,
 	CreateSinShapedLineStrip__ctor_m530859F5A7C96C8426BA1BA2AA7BD85938F5C4BD,
-	ShotBehavior_Update_mC627B0608EA9A18BD107E2767BB59A3210C7AE8D,
+	ShotBehavior_FixedUpdate_m7D899790507E1409498319BF2B40D0E2A9BF6EEC,
 	ShotBehavior_setTarget_m5F79C2C4326251BCACC53EB8B7B407FC5D74608A,
 	ShotBehavior_explode_mE7B0A73C18F3FB4D60E9D154A2AE68339254EF03,
 	ShotBehavior__ctor_m72B676C52ED79C61ED8837924C8DA269EB6AE02E,
