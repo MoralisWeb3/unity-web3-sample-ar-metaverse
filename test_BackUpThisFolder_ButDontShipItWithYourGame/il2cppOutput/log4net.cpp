@@ -12664,7 +12664,7 @@ IL_0035:
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_consoleOutputWriter_19), (void*)L_9);
 		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_10 = __this->___m_consoleOutputWriter_19;
 		NullCheck(L_10);
-		VirtualActionInvoker1< bool >::Invoke(27 /* System.Void System.IO.StreamWriter::set_AutoFlush(System.Boolean) */, L_10, (bool)1);
+		VirtualActionInvoker1< bool >::Invoke(28 /* System.Void System.IO.StreamWriter::set_AutoFlush(System.Boolean) */, L_10, (bool)1);
 		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_11 = __this->___m_consoleOutputWriter_19;
 		il2cpp_codegen_runtime_class_init_inline(GC_t920F9CF6EBB7C787E5010A4352E1B587F356DC58_il2cpp_TypeInfo_var);
 		GC_SuppressFinalize_m3352E2F2119EB46913B51B7AAE2F217C63C35F2A(L_11, NULL);

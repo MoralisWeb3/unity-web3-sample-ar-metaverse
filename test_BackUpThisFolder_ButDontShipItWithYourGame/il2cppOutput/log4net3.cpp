@@ -21169,7 +21169,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReusableStringWriter_Reset_m43199BF7CA5E
 	bool V_1 = false;
 	{
 		StringBuilder_t* L_0;
-		L_0 = VirtualFuncInvoker0< StringBuilder_t* >::Invoke(27 /* System.Text.StringBuilder System.IO.StringWriter::GetStringBuilder() */, __this);
+		L_0 = VirtualFuncInvoker0< StringBuilder_t* >::Invoke(28 /* System.Text.StringBuilder System.IO.StringWriter::GetStringBuilder() */, __this);
 		V_0 = L_0;
 		StringBuilder_t* L_1 = V_0;
 		NullCheck(L_1);

@@ -28,6 +28,11 @@ public class Shooting : State
             GameObject laser = Instantiate(laserShotPrefab, originT.position, originT.transform.rotation);
             laser.GetComponent<ShotBehavior>().SetTarget(_hit.point);
             Destroy(laser, 2f);
+
+            if (_hit.collider.gameObject.CompareTag("CrateButton")) // We hit the button!
+            {
+                ChangeState("Opening");
+            }
         }
     }
 }

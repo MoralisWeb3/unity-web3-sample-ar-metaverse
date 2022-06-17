@@ -284,6 +284,7 @@ Transform:
   - {fileID: 2096402321}
   - {fileID: 537872142}
   - {fileID: 653041898}
+  - {fileID: 1988895788}
   - {fileID: 754186681}
   - {fileID: 2107060406}
   m_Father: {fileID: 0}
@@ -1456,7 +1457,7 @@ Transform:
   m_Children:
   - {fileID: 995907875}
   m_Father: {fileID: 129032815}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &754186682
 MonoBehaviour:
@@ -2068,6 +2069,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899994377}
   m_CullTransparentMesh: 1
+--- !u!1 &1988895787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1988895788}
+  - component: {fileID: 1988895789}
+  m_Layer: 0
+  m_Name: Opening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1988895788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988895787}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 129032815}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1988895789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988895787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00076635cffede24ea92b7caa7889007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metaverseItem: {fileID: 6774905118678103306, guid: b367efeb90c1f204a8ee4edcebe0295f,
+    type: 3}
 --- !u!1 &1995721632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,7 +2503,7 @@ Transform:
   m_Children:
   - {fileID: 1135051027}
   m_Father: {fileID: 129032815}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2107060407
 MonoBehaviour:

@@ -5649,7 +5649,7 @@ IL_00f8_3:
 							String_t* L_43 = V_3;
 							NullCheck((TextWriter_tA9E5461506CF806E17B6BBBF2119359DEDA3F0F3*)L_42);
 							Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* L_44;
-							L_44 = VirtualFuncInvoker1< Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572*, String_t* >::Invoke(24 /* System.Threading.Tasks.Task System.IO.TextWriter::WriteAsync(System.String) */, (TextWriter_tA9E5461506CF806E17B6BBBF2119359DEDA3F0F3*)L_42, L_43);
+							L_44 = VirtualFuncInvoker1< Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572*, String_t* >::Invoke(25 /* System.Threading.Tasks.Task System.IO.TextWriter::WriteAsync(System.String) */, (TextWriter_tA9E5461506CF806E17B6BBBF2119359DEDA3F0F3*)L_42, L_43);
 							NullCheck(L_44);
 							TaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833 L_45;
 							L_45 = Task_GetAwaiter_m08B368EAC939DD35D0AC428180822255A442CA29(L_44, NULL);

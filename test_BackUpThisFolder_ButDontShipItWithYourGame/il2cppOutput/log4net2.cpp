@@ -6302,7 +6302,7 @@ FINALLY_00b7:
 				ReusableStringWriter_tB898DCAE357C9C96740C19A6276CAA38FADCC781* L_11 = __this->___m_formatWriter_8;
 				NullCheck(L_11);
 				StringBuilder_t* L_12;
-				L_12 = VirtualFuncInvoker0< StringBuilder_t* >::Invoke(27 /* System.Text.StringBuilder System.IO.StringWriter::GetStringBuilder() */, L_11);
+				L_12 = VirtualFuncInvoker0< StringBuilder_t* >::Invoke(28 /* System.Text.StringBuilder System.IO.StringWriter::GetStringBuilder() */, L_11);
 				V_2 = L_12;
 				StringBuilder_t* L_13 = V_2;
 				NullCheck(L_13);

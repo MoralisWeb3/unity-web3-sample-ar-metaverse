@@ -58,6 +58,11 @@ public class Scanning : State
     private void SpawnPrefab(Vector3 spawnPosition)
     {
         GameObject obj = Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
+        
+        Vector3 rot = Quaternion.LookRotation(_arCamera.transform.position - obj.transform.position).eulerAngles;
+        rot.x = rot.z = 0;
+        obj.transform.rotation = Quaternion.Euler(-rot);
+
         _gameManager.SetSpawnedObject(obj);
     }
 }

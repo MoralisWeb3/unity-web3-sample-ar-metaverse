@@ -14,4 +14,15 @@ public class GameManager : StateMachine
     {
         spawnedObject = obj;
     }
+
+    public GameObject GetSpawnedObject()
+    {
+        if (spawnedObject is null)
+        {
+            Debug.Log("No spawned gameObject!");
+            return null;
+        }
+        
+        return spawnedObject;
+    }
 }
