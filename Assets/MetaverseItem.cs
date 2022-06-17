@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 using Pixelplacement;
 
 [RequireComponent(typeof(SphereCollider))]
 public class MetaverseItem : MonoBehaviour
 {
+    // Events
+    public static Action Ready;
+    
     // Components
     private SphereCollider _sphereCollider;
     
@@ -28,6 +32,11 @@ public class MetaverseItem : MonoBehaviour
         
         // We move the item to the target position using Tween. We also scale it to the initial scale
         Tween.Position(transform, transform.position, targetPos, 3f, 0, Tween.EaseOut);
-        Tween.LocalScale(transform, _initScale, 3f, 0, Tween.EaseOut);
+        Tween.LocalScale(transform, _initScale, 3f, 0, Tween.EaseOut, Tween.LoopType.None, null, () =>
+        {
+            // When the tween is completed, we enable the collider and we shout WE'RE READY!!
+            _sphereCollider.enabled = true;
+            Ready?.Invoke();
+        });
     }
 }

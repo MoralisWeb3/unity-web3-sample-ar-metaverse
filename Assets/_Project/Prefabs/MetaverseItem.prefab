@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4400459542752585373}
   m_Layer: 0
   m_Name: MetaverseItem
-  m_TagString: Spawnable
+  m_TagString: MetaverseItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

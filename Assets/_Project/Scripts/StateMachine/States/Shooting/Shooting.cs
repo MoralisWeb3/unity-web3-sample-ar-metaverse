@@ -23,11 +23,14 @@ public class Shooting : State
         if (Application.isEditor)
         {
             // To facilitate debug
-            if (Input.GetKeyDown(KeyCode.O))
+            if (Input.GetKeyDown(KeyCode.O)) // TODO Enable old input system
             {
-                ChangeState("Opening");
+                ChangeState("Opening"); 
             }
         }
+
+        if (Camera.main is null)
+            return;
         
         Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f)); //Center of the screen
         if (Physics.Raycast(ray, out _hit, Range))

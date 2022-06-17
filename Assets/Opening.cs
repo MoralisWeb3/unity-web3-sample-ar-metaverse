@@ -18,6 +18,8 @@ public class Opening : State
 
     private void OnEnable()
     {
+        MetaverseItem.Ready += GoToViewing;
+        
         var spawnedObject = _gameManager.GetSpawnedObject();
 
         try
@@ -35,9 +37,14 @@ public class Opening : State
 
         Instantiate(metaverseItem, _originT.position, Quaternion.identity);
     }
-
+    
     private void OnDisable()
     {
-        
+        MetaverseItem.Ready -= GoToViewing;
+    }
+
+    private void GoToViewing()
+    {
+        ChangeState("Viewing");
     }
 }

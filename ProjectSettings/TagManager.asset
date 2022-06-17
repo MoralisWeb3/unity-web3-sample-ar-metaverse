@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Spawnable
   - QrConnectMenu
   - IOSConnectMenu
   - LaserShot
   - CrateButton
+  - MetaverseItem
   layers:
   - Default
   - TransparentFX
