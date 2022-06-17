@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b685e0cdcf019c84fb315665ff7f6a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ipfsMetadataUrl: https://ipfs.moralis.io:2053/ipfs/QmU7NQVxns42eQ5ub6co4XJeknSuUEy5zwM1edYPayAYDD/MoralisARItem_637910912467355306.json
+  spriteRenderer: {fileID: 4400459542795702177}
 --- !u!33 &4400459542752585375
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 4400459542795702183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.07945429, y: 0.07945429, z: 0.07945429}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4400459542752585374}
@@ -185,7 +187,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 404bc3f059a965440bcb85ce7675af55, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -193,7 +195,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7885977796200600315
