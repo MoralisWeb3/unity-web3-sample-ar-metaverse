@@ -24,4 +24,9 @@ public class Inspecting : State
         descriptionLabel.text = _gameManager.metaverseItem.metadataObject.description;
         imageLabel.sprite = _gameManager.metaverseItem.spriteRenderer.sprite;
     }
+
+    public void GoToMinting()
+    {
+        ChangeState("Minting");
+    }
 }

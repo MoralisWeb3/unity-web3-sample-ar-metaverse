@@ -4,6 +4,10 @@ using Pixelplacement;
 
 public class GameManager : StateMachine
 {
+    [Header("Smart Contract Data")]
+    public const string ContractAddress = "";
+    public const string ContractAbi = "";
+    
     [HideInInspector] public GameObject spawnedObject;
     [HideInInspector] public MetaverseItem metaverseItem;
 
