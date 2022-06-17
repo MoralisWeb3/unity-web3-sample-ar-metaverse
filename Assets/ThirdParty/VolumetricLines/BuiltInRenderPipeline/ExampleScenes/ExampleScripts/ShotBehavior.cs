@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ShotBehavior : MonoBehaviour
 {
+    public static Action TargetHit;
+    
     public GameObject collisionExplosion;
     public float speed;
     
@@ -16,6 +19,8 @@ public class ShotBehavior : MonoBehaviour
         {
             if (transform.position == _target)
             {
+                TargetHit?.Invoke();
+                
                 Explode();
                 return;
             }
