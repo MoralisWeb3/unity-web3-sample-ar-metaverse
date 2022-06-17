@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 22732922}
   - component: {fileID: 22732921}
   - component: {fileID: 22732925}
+  - component: {fileID: 22732926}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -269,6 +270,14 @@ MonoBehaviour:
   freeLookSensitivity: 2
   zoomSensitivity: 0.8
   fastZoomSensitivity: 2
+--- !u!81 &22732926
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22732919}
+  m_Enabled: 1
 --- !u!1 &129032814
 GameObject:
   m_ObjectHideFlags: 0
