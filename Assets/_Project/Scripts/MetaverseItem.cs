@@ -46,13 +46,13 @@ public class MetaverseItem : MonoBehaviour
         StartCoroutine(GetMetadataObject(ipfsMetadataUrl));
         
         // We set the target position that we want
-        Vector3 targetPos = new Vector3(transform.position.x, transform.position.y + 0.125f, transform.position.z - 0.2f);
+        Vector3 targetPos = new Vector3(transform.localPosition.x, transform.localPosition.y + 0.4f, transform.position.z + 0.3f);
         
         // We move the item to the target position using Tween. We also scale it to the initial scale
-        Tween.Position(transform, transform.position, targetPos, 3f, 0, Tween.EaseOut);
+        Tween.LocalPosition(transform, transform.localPosition, targetPos, 3f, 0, Tween.EaseOut);
         Tween.LocalScale(transform, _initScale, 3f, 0, Tween.EaseOut, Tween.LoopType.None, null, () =>
         {
-            // We do it when we have retrieved all data from IPFS
+            // Now We do it when we have retrieved all data from IPFS
         });
     }
 

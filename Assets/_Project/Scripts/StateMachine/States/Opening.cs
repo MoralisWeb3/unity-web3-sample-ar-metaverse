@@ -35,7 +35,7 @@ public class Opening : State
         _crate.Open();
         _originT = _crate.GetCenterTransform();
 
-        Instantiate(metaverseItem, _originT.position, Quaternion.identity);
+        Instantiate(metaverseItem, spawnedObject.transform);
     }
     
     private void OnDisable()
