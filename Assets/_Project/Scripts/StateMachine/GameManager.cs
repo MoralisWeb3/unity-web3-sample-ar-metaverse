@@ -1,9 +1,17 @@
+using System;
 using UnityEngine;
 using Pixelplacement;
 
 public class GameManager : StateMachine
 {
     [HideInInspector] public GameObject spawnedObject;
+
+    private AudioSource _audioSource;
+    
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     public void GoToAuthenticating()
     {
@@ -24,5 +32,10 @@ public class GameManager : StateMachine
         }
         
         return spawnedObject;
+    }
+
+    public void PlaySpawnedObjectSound()
+    {
+        _audioSource.Play();
     }
 }

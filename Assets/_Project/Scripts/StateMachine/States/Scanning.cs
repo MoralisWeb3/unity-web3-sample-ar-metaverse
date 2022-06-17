@@ -86,6 +86,7 @@ public class Scanning : State
         obj.transform.rotation = Quaternion.Euler(rot);
 
         _gameManager.SetSpawnedObject(obj);
+        _gameManager.PlaySpawnedObjectSound();
     }
     
     private void DebugSpawnPrefab()
@@ -100,5 +101,6 @@ public class Scanning : State
         obj.transform.rotation = Quaternion.Euler(rot);
 
         _gameManager.SetSpawnedObject(obj);
+        _gameManager.PlaySpawnedObjectSound();
     }
 }
