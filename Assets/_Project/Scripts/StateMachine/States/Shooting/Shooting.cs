@@ -41,7 +41,7 @@ public class Shooting : State
             laser.GetComponent<ShotBehavior>().SetTarget(_hit.point);
             Destroy(laser, 2f);
 
-            if (_hit.collider.gameObject.CompareTag("CrateButton")) // We hit the button!
+            if (_hit.collider.gameObject.CompareTag("CrateButton")) // We hit the button! //TODO This!!!!!!
             {
                 ChangeState("Opening");
             }
