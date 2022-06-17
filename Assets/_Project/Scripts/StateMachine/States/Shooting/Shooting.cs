@@ -20,6 +20,15 @@ public class Shooting : State
     
     public void Shoot()
     {
+        if (Application.isEditor)
+        {
+            // To facilitate debug
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                ChangeState("Opening");
+            }
+        }
+        
         Ray ray = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f)); //Center of the screen
         if (Physics.Raycast(ray, out _hit, Range))
         {

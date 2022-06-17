@@ -1,21 +1,33 @@
 using UnityEngine;
 using Pixelplacement;
 
+[RequireComponent(typeof(SphereCollider))]
 public class MetaverseItem : MonoBehaviour
 {
+    // Components
+    private SphereCollider _sphereCollider;
+    
+    // Control vars
     private Vector3 _initScale;
 
     private void Awake()
     {
+        // We don't want anything to collide with sphere when just instantiated
+        _sphereCollider = GetComponent<SphereCollider>();
+        _sphereCollider.enabled = false;
+        
+        // We also save our initial scale and then we set it to 0. We start from nothing :)
         _initScale = transform.localScale;
         transform.localScale = Vector3.zero;
     }
 
     private void OnEnable()
     {
-        var myTransform = transform;
+        // We set the target position that we want
+        Vector3 targetPos = new Vector3(transform.position.x, transform.position.y + 0.125f, transform.position.z - 0.2f);
         
-        Tween.Position(myTransform, myTransform.position, new Vector3(myTransform.position.x, myTransform.position.y + 0.25f, myTransform.position.z), 3f, 0);
-        Tween.LocalScale(transform, _initScale, 3f, 0);
+        // We move the item to the target position using Tween. We also scale it to the initial scale
+        Tween.Position(transform, transform.position, targetPos, 3f, 0, Tween.EaseOut);
+        Tween.LocalScale(transform, _initScale, 3f, 0, Tween.EaseOut);
     }
 }
