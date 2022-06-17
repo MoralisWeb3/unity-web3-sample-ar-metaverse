@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b685e0cdcf019c84fb315665ff7f6a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipfsMetadataUrl: https://ipfs.moralis.io:2053/ipfs/QmU7NQVxns42eQ5ub6co4XJeknSuUEy5zwM1edYPayAYDD/MoralisARItem_637910912467355306.json
+  ipfsMetadataUrl: https://ipfs.moralis.io:2053/ipfs/QmfHobqBMZKfpY1i6GvkR8qoDHWpjw1Ny6QgRgCJkBsX5h/MoralisARNFT_637911103566732662.json
   spriteRenderer: {fileID: 4400459542795702177}
 --- !u!33 &4400459542752585375
 MeshFilter:
