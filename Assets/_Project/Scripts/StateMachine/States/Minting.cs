@@ -1,13 +1,17 @@
-using System;
+using System.Collections;
 using Cysharp.Threading.Tasks;
 using MoralisUnity;
 using Nethereum.Hex.HexTypes;
 using Pixelplacement;
 using TMPro;
 using UnityEngine;
+using WalletConnectSharp.Unity;
 
 public class Minting : State
 {
+    [Header("WalletConnect")] 
+    [SerializeField] private WalletConnect walletConnect;
+    
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI statusText;
 

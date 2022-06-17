@@ -25,6 +25,11 @@ public class Inspecting : State
         imageLabel.sprite = _gameManager.metaverseItem.spriteRenderer.sprite;
     }
 
+    public void GoToViewing()
+    {
+        ChangeState("Viewing");
+    }
+
     public void GoToMinting()
     {
         ChangeState("Minting");
