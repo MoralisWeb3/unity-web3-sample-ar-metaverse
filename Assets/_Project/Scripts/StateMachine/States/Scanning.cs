@@ -13,6 +13,9 @@ public class Scanning : State
     [Header("Spawnable Prefab")]
     [SerializeField] private GameObject cratePrefab;
 
+    [Header("Editor Debug")] [SerializeField]
+    private FreeLookBehaviour freeLookBehaviour;
+
     private GameManager _gameManager;
     private readonly List<ARRaycastHit> _raycastHits = new List<ARRaycastHit>();
     private Camera _arCamera;
@@ -26,7 +29,15 @@ public class Scanning : State
     private void OnEnable()
     {
         _arCamera = arSessionOrigin.camera;
-        arPlaneManager.enabled = true;
+
+        if (Application.isMobilePlatform)
+        {
+            arPlaneManager.enabled = true;
+        }
+        else
+        {
+            freeLookBehaviour.enabled = true;
+        }
     }
 
     private void OnDisable()
@@ -36,21 +47,32 @@ public class Scanning : State
 
     void Update()
     {
-        if (Input.touchCount == 0)
-            return;
-
-        RaycastHit hit;
-        Ray ray = _arCamera.ScreenPointToRay(Input.GetTouch(0).position);
-
-        if (arRaycastManager.Raycast(Input.GetTouch(0).position, _raycastHits))
+        if (Application.isMobilePlatform)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            if (Input.touchCount == 0)
+                return;
+
+            RaycastHit hit;
+            Ray ray = _arCamera.ScreenPointToRay(Input.GetTouch(0).position);
+
+            if (arRaycastManager.Raycast(Input.GetTouch(0).position, _raycastHits))
             {
-                if (Physics.Raycast(ray, out hit))
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    SpawnPrefab(_raycastHits[0].pose.position);
-                    ChangeState("Shooting");
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        SpawnPrefab(_raycastHits[0].pose.position);
+                        ChangeState("Shooting");
+                    }
                 }
+            }   
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                DebugSpawnPrefab();
+                ChangeState("Shooting");
             }
         }
     }
@@ -61,7 +83,21 @@ public class Scanning : State
         
         Vector3 rot = Quaternion.LookRotation(_arCamera.transform.position - obj.transform.position).eulerAngles;
         rot.x = rot.z = 0;
-        obj.transform.rotation = Quaternion.Euler(-rot);
+        obj.transform.rotation = Quaternion.Euler(rot);
+
+        _gameManager.SetSpawnedObject(obj);
+    }
+    
+    private void DebugSpawnPrefab()
+    {
+        var spawnPos = new Vector3(_arCamera.transform.position.x, _arCamera.transform.position.y,
+            _arCamera.transform.position.z + 0.5f);
+        
+        GameObject obj = Instantiate(cratePrefab, spawnPos, Quaternion.identity);
+        
+        Vector3 rot = Quaternion.LookRotation(_arCamera.transform.position - obj.transform.position).eulerAngles;
+        rot.x = rot.z = 0;
+        obj.transform.rotation = Quaternion.Euler(rot);
 
         _gameManager.SetSpawnedObject(obj);
     }

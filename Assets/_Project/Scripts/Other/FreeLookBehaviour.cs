@@ -13,7 +13,7 @@ using UnityEngine;
 ///	mouse			- free look / rotation
 ///     
 /// </summary>
-public class FreeLookCamera : MonoBehaviour
+public class FreeLookBehaviour : MonoBehaviour
 {
     /// <summary>
     /// Normal speed of camera movement.
