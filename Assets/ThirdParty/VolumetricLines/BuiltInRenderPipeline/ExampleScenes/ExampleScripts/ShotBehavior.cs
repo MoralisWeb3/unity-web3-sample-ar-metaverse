@@ -1,45 +1,40 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ShotBehavior : MonoBehaviour
 {
-
-    public Vector3 m_target;
     public GameObject collisionExplosion;
     public float speed;
-
-
+    
+    private Vector3 _target;
+    
     // Update is called once per frame
     void FixedUpdate()
     {
-        // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
         float step = speed * Time.deltaTime;
 
-        if (m_target != null)
+        if (_target != null) //TODO
         {
-            if (transform.position == m_target)
+            if (transform.position == _target)
             {
-                explode();
+                Explode();
                 return;
             }
-            transform.position = Vector3.MoveTowards(transform.position, m_target, step);
+            transform.position = Vector3.MoveTowards(transform.position, _target, step);
         }
-
     }
 
-    public void setTarget(Vector3 target)
+    public void SetTarget(Vector3 target)
     {
-        m_target = target;
+        _target = target;
     }
 
-    void explode()
+    private void Explode()
     {
         if (collisionExplosion  != null) {
             GameObject explosion = Instantiate(
                 collisionExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
-            Destroy(explosion, 1f);
+            Destroy(explosion, 2f);
         }
     }
-
 }

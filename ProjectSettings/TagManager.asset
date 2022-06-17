@@ -8,11 +8,12 @@ TagManager:
   - QrConnectMenu
   - IOSConnectMenu
   - LaserShot
+  - CrateButton
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Crate
   - Water
   - UI
   - 

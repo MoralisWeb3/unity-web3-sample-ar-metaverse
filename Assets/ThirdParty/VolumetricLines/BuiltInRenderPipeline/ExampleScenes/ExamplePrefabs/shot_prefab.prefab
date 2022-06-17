@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb039d3a64491f4ebfc852d25b5ee70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_target: {x: 0, y: 0, z: 0}
   collisionExplosion: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
     type: 3}
   speed: 3
@@ -192,8 +191,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136330}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.617365, y: 6.674759, z: 55.330006}
-  m_Center: {x: 0, y: -0.55827755, z: 24.999994}
+  m_Size: {x: 6.617365, y: 6.613508, z: 65.60999}
+  m_Center: {x: 0, y: 0.30644563, z: 24.99999}

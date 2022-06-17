@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
+    [Header("Components")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private Animation anim;
+    
     private void OnEnable()
     {
-        CrateButton.Triggered += Disarm;
+        CrateButton.Triggered += Open;
     }
 
     private void OnDisable()
     {
-        CrateButton.Triggered -= Disarm;
+        CrateButton.Triggered -= Open;
     }
     
-    private void Disarm()
+    private void Open()
     {
         //TODO Destroy or open
+        audioSource.Play();
+        anim.Play();
     }
 }

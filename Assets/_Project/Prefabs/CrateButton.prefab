@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1904092122857414487}
   - component: {fileID: 1904092122857414481}
   - component: {fileID: 1904092122857414480}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CrateButton
-  m_TagString: Untagged
+  m_TagString: CrateButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
