@@ -43,8 +43,9 @@ public class Opening : State
         MetaverseItem.Ready -= GoToViewing;
     }
 
-    private void GoToViewing()
+    private void GoToViewing(MetaverseItem item)
     {
+        _gameManager.metaverseItem = item;
         ChangeState("Viewing");
     }
 }

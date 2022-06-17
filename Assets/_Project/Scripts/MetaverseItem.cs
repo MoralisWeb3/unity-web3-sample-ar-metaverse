@@ -15,7 +15,8 @@ public class MetadataObject
 public class MetaverseItem : MonoBehaviour
 {
     // Events
-    public static Action Ready;
+    public static Action<MetaverseItem> Ready;
+    public MetadataObject metadataObject;
     
     [Header("IPFS")]
     public string ipfsMetadataUrl;
@@ -23,8 +24,6 @@ public class MetaverseItem : MonoBehaviour
     [Header("Components")]
     public SpriteRenderer spriteRenderer;
 
-    [HideInInspector] public MetadataObject metadataObject;
-    
     // More Components
     private SphereCollider _sphereCollider;
     
@@ -55,6 +54,12 @@ public class MetaverseItem : MonoBehaviour
         {
             // We do it when we have retrieved all data from IPFS
         });
+    }
+
+    private void ImReady()
+    {
+        _sphereCollider.enabled = true;
+        Ready?.Invoke(this);
     }
     
     private IEnumerator GetMetadataObject(string metadataUrl)
@@ -101,8 +106,7 @@ public class MetaverseItem : MonoBehaviour
             spriteRenderer.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), tex.height);
             
             // When the tween is completed, we enable the collider and we shout WE'RE READY!!
-            _sphereCollider.enabled = true;
-            Ready?.Invoke();
+            ImReady();
             
             uwr.Dispose();
         }

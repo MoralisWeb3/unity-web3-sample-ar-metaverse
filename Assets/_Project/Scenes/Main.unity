@@ -356,6 +356,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   spawnedObject: {fileID: 0}
+  metaverseItem: {fileID: 0}
 --- !u!114 &129032817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,6 +1618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1346e9bf441ff546b8240fe4a3fb38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameLabel: {fileID: 590108958}
+  descriptionLabel: {fileID: 2088461432}
+  imageLabel: {fileID: 893155676}
 --- !u!1 &793920573
 GameObject:
   m_ObjectHideFlags: 0

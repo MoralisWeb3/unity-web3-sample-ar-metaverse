@@ -5,6 +5,7 @@ using Pixelplacement;
 public class GameManager : StateMachine
 {
     [HideInInspector] public GameObject spawnedObject;
+    [HideInInspector] public MetaverseItem metaverseItem;
 
     private AudioSource _audioSource;
     
