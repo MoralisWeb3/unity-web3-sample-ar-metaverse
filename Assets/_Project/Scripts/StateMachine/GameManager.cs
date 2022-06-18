@@ -11,6 +11,9 @@ public class GameManager : StateMachine
     [HideInInspector] public GameObject spawnedObject;
     [HideInInspector] public MetaverseItem metaverseItem;
 
+    [HideInInspector] public bool isItemMinted;
+    [HideInInspector] public int itemTokenId;
+
     private AudioSource _audioSource;
     
     private void Awake()

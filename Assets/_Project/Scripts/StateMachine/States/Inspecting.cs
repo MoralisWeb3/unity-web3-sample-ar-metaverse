@@ -10,6 +10,10 @@ public class Inspecting : State
     [SerializeField] private TextMeshProUGUI nameLabel;
     [SerializeField] private TextMeshProUGUI descriptionLabel;
     [SerializeField] private Image imageLabel;
+    
+    [Header("Buttons")]
+    [SerializeField] private Button mintButton;
+    [SerializeField] private GameObject copyButtons;
 
     private GameManager _gameManager;
     
@@ -23,6 +27,17 @@ public class Inspecting : State
         nameLabel.text = _gameManager.metaverseItem.metadataObject.name;
         descriptionLabel.text = _gameManager.metaverseItem.metadataObject.description;
         imageLabel.sprite = _gameManager.metaverseItem.spriteRenderer.sprite;
+
+        if (_gameManager.isItemMinted)
+        {
+            mintButton.interactable = false;
+            copyButtons.SetActive(true);
+        }
+        else
+        {
+            mintButton.interactable = true;
+            copyButtons.SetActive(false);
+        }
     }
 
     public void GoToViewing()
