@@ -2,20 +2,25 @@ using Pixelplacement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WalletConnectSharp.Unity;
 
 public class Inspecting : State
 {
+    [Header("WalletConnect")]
+    [SerializeField] private WalletConnect walletConnect;
+    
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI nameLabel;
     [SerializeField] private TextMeshProUGUI descriptionLabel;
     [SerializeField] private Image imageLabel;
     
     [Header("Buttons")]
-    [SerializeField] private Button mintButton;
+    [SerializeField] private GameObject mintButton;
+    [SerializeField] private GameObject mintedButton;
     [SerializeField] private GameObject copyButtons;
 
     private GameManager _gameManager;
-    
+
     private void Awake()
     {
         _gameManager = GetComponentInParent<GameManager>(); // We assume we're under GameManager
@@ -29,12 +34,16 @@ public class Inspecting : State
 
         if (_gameManager.isItemMinted)
         {
-            mintButton.interactable = false;
+            mintButton.SetActive(false);
+            mintedButton.SetActive(true);
+            
             copyButtons.SetActive(true);
         }
         else
         {
-            mintButton.interactable = true;
+            mintButton.SetActive(true);
+            mintedButton.SetActive(false);
+            
             copyButtons.SetActive(false);
         }
     }
@@ -56,6 +65,6 @@ public class Inspecting : State
 
     public void CopyTokenId()
     {
-        _gameManager.itemTokenId.ToString().CopyToClipboard();
+        _gameManager.itemTokenId.CopyToClipboard();
     }
 }

@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
+using System.Numerics;
 using Cysharp.Threading.Tasks;
 using MoralisUnity;
 using Nethereum.Hex.HexTypes;
-using Pixelplacement;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using WalletConnectSharp.Unity;
+using State = Pixelplacement.State;
 
 public class Minting : State
 {
@@ -18,6 +21,8 @@ public class Minting : State
     [SerializeField] private TextMeshProUGUI statusText;
 
     private GameManager _gameManager;
+
+    private BigInteger _currentTokenId;
 
     private void Awake()
     {
@@ -50,17 +55,27 @@ public class Minting : State
         if (result is null)
         {
             statusText.text = "Transaction failed";
+            _gameManager.isItemMinted = false;
+            
             ChangeState("Viewing");
             return;
         }
     
         statusText.text = "Transaction completed!";
+        _gameManager.itemTokenId = _currentTokenId.ToString();
+        _gameManager.isItemMinted = true;
+        
         ChangeState("Viewing");
     }
     
     private async UniTask<string> ExecuteMinting(string metadataUrl)
     {
+        // Dummy TokenId based on current time.
+        long currentTime = DateTime.Now.Ticks;
+        _currentTokenId = new BigInteger(currentTime);
+        
         object[] parameters = {
+            _currentTokenId.ToString("x"), // This is the format the contract expects
             metadataUrl
         };
 
