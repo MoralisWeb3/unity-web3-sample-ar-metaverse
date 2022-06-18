@@ -12,6 +12,10 @@ public class Scanning : State
     
     [Header("Spawnable Prefab")]
     [SerializeField] private GameObject cratePrefab;
+    
+    [Header("UI Elements")]
+    [SerializeField] private GameObject scanPanel;
+    [SerializeField] private GameObject tapToPlacePanel;
 
     [Header("Editor Debug")] [SerializeField]
     private FreeLookBehaviour freeLookBehaviour;
@@ -33,22 +37,38 @@ public class Scanning : State
         if (Application.isMobilePlatform)
         {
             arPlaneManager.enabled = true;
+            scanPanel.SetActive(true);
         }
         else
         {
             freeLookBehaviour.enabled = true;
+            tapToPlacePanel.SetActive(true);
         }
     }
 
     private void OnDisable()
     {
         arPlaneManager.enabled = false;
+        tapToPlacePanel.SetActive(false);
+        scanPanel.SetActive(false);
     }
 
     void Update()
     {
         if (Application.isMobilePlatform)
         {
+            //Ray infoRay = _arCamera.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
+            if (arRaycastManager.Raycast(new Vector2(Screen.width / 2f, Screen.height / 2f), _raycastHits))
+            {
+                tapToPlacePanel.SetActive(true);
+                scanPanel.SetActive(false);
+            }
+            else
+            {
+                tapToPlacePanel.SetActive(false);
+                scanPanel.SetActive(true);
+            }
+
             if (Input.touchCount == 0)
                 return;
 
