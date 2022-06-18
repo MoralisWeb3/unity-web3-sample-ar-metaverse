@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b685e0cdcf019c84fb315665ff7f6a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipfsMetadataUrl: https://ipfs.moralis.io:2053/ipfs/QmfHobqBMZKfpY1i6GvkR8qoDHWpjw1Ny6QgRgCJkBsX5h/MoralisARNFT_637911103566732662.json
+  ipfsMetadataUrl: https://ipfs.moralis.io:2053/ipfs/QmPE475q1TQUF7Q2wEToKuxdY4jQqYHz1fGZPn1Up4J6Bc/MoralisARNFT_637911522221455908.json
   spriteRenderer: {fileID: 4400459542795702177}
 --- !u!33 &4400459542752585375
 MeshFilter:
@@ -126,7 +126,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d9f880a2977649740a496018b2427a92, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

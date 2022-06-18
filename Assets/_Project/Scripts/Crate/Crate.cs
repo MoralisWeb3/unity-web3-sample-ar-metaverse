@@ -6,6 +6,9 @@ public class Crate : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Animation anim;
 
+    [Header("Particle Systems")]
+    [SerializeField] private ParticleSystem smokePS;
+
     [Header("Other")]
     [SerializeField] private Transform centerT;
     
@@ -21,7 +24,7 @@ public class Crate : MonoBehaviour
     
     public void Open()
     {
-        //TODO Destroy or open
+        smokePS.Play();
         audioSource.Play();
         anim.Play();
     }
