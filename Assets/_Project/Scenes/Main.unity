@@ -358,6 +358,7 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   metaverseItem: {fileID: 0}
   isItemMinted: 0
+  itemTokenId: 0
 --- !u!114 &129032817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4217,7 +4218,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 754186682}
         m_TargetAssemblyTypeName: Inspecting, Assembly-CSharp
-        m_MethodName: GoToMinting
+        m_MethodName: CopyTokenId
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4352,7 +4353,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 754186682}
         m_TargetAssemblyTypeName: Inspecting, Assembly-CSharp
-        m_MethodName: GoToMinting
+        m_MethodName: CopyContractAddress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

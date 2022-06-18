@@ -1,4 +1,3 @@
-using System;
 using Pixelplacement;
 using TMPro;
 using UnityEngine;
@@ -48,5 +47,15 @@ public class Inspecting : State
     public void GoToMinting()
     {
         ChangeState("Minting");
+    }
+
+    public void CopyContractAddress()
+    {
+        GameManager.ContractAddress.CopyToClipboard();
+    }
+
+    public void CopyTokenId()
+    {
+        _gameManager.itemTokenId.ToString().CopyToClipboard();
     }
 }
