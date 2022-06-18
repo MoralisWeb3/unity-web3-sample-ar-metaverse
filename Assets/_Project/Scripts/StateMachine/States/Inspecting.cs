@@ -61,10 +61,12 @@ public class Inspecting : State
     public void CopyContractAddress()
     {
         GameManager.ContractAddress.CopyToClipboard();
+        walletConnect.OpenMobileWallet();
     }
 
     public void CopyTokenId()
     {
         _gameManager.itemTokenId.CopyToClipboard();
+        walletConnect.OpenMobileWallet();
     }
 }
