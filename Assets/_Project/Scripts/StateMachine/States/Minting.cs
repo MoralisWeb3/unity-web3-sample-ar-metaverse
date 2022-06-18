@@ -45,8 +45,6 @@ public class Minting : State
     {
         statusText.text = "Please confirm transaction in your wallet";
         
-        //if (Application.isMobilePlatform)
-    
         var result = await ExecuteMinting(metadataUrl);
 
         if (result is null)
@@ -70,12 +68,12 @@ public class Minting : State
         HexBigInteger value = new HexBigInteger(0);
         HexBigInteger gas = new HexBigInteger(0);
         HexBigInteger gasPrice = new HexBigInteger(0);
-
+        
         if (Application.isMobilePlatform)
         {
             // TODO
             // A little trick for the code to continue and call ExecuteContractFunction, and then opening the mobile wallet :)
-            //Invoke(nameof(OpenMobileWallet), 1f);
+            Invoke(nameof(OpenMobileWallet), 2f);
         }
 
         string resp = await Moralis.ExecuteContractFunction(GameManager.ContractAddress, GameManager.ContractAbi, "mintItem", parameters, value, gas, gasPrice);
