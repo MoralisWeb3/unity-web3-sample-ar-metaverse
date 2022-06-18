@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using Pixelplacement;
+using UnityEngine.SceneManagement;
 
 public class GameManager : StateMachine
 {
@@ -16,6 +16,11 @@ public class GameManager : StateMachine
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void GoToAuthenticating()

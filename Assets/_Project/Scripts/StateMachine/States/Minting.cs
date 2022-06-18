@@ -5,14 +5,16 @@ using Nethereum.Hex.HexTypes;
 using Pixelplacement;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using WalletConnectSharp.Unity;
 
 public class Minting : State
 {
     [Header("WalletConnect")] 
     [SerializeField] private WalletConnect walletConnect;
-    
+
     [Header("UI Elements")]
+    [SerializeField] private Button openWalletButton;
     [SerializeField] private TextMeshProUGUI statusText;
 
     private GameManager _gameManager;
@@ -42,6 +44,8 @@ public class Minting : State
     private async void MintNft(string metadataUrl)
     {
         statusText.text = "Please confirm transaction in your wallet";
+        
+        //if (Application.isMobilePlatform)
     
         var result = await ExecuteMinting(metadataUrl);
 
@@ -67,8 +71,20 @@ public class Minting : State
         HexBigInteger gas = new HexBigInteger(0);
         HexBigInteger gasPrice = new HexBigInteger(0);
 
+        if (Application.isMobilePlatform)
+        {
+            // TODO
+            // A little trick for the code to continue and call ExecuteContractFunction, and then opening the mobile wallet :)
+            //Invoke(nameof(OpenMobileWallet), 1f);
+        }
+
         string resp = await Moralis.ExecuteContractFunction(GameManager.ContractAddress, GameManager.ContractAbi, "mintItem", parameters, value, gas, gasPrice);
 
         return resp;
+    }
+
+    private void OpenMobileWallet()
+    {
+        walletConnect.OpenMobileWallet();
     }
 }
