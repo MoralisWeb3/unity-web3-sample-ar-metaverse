@@ -23,11 +23,6 @@ public class GameManager : StateMachine
         SceneManager.LoadScene(0);
     }
 
-    public void GoToAuthenticating()
-    {
-        ChangeState("Authenticating");
-    }
-    
     public void SetSpawnedObject(GameObject obj)
     {
         spawnedObject = obj;
