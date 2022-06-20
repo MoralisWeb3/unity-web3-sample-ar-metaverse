@@ -7,8 +7,8 @@ TagManager:
   - QrConnectMenu
   - IOSConnectMenu
   - LaserShot
-  - CrateButton
   - MetaverseItem
+  - LootBoxButton
   layers:
   - Default
   - TransparentFX

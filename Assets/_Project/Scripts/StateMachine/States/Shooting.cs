@@ -53,7 +53,7 @@ public class Shooting : State
     {
         shootButton.interactable = true;
         
-        if (_hit.collider.gameObject.CompareTag("CrateButton"))
+        if (_hit.collider.gameObject.CompareTag("LootBoxButton"))
         {
             ChangeState("Opening");
         }
