@@ -39,7 +39,7 @@ public class Minting : State
             return;
         }
         
-        MintNft(_gameManager.metaverseItem.ipfsMetadataUrl);
+        MintNft(_gameManager.currentMetaverseItem.ipfsMetadataUrl);
     }
     
     private async void MintNft(string metadataUrl)

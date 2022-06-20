@@ -45,7 +45,7 @@ public class Opening : State
 
     private void GoToViewing(MetaverseItem item)
     {
-        _gameManager.metaverseItem = item;
+        _gameManager.currentMetaverseItem = item;
         ChangeState("Viewing");
     }
 }

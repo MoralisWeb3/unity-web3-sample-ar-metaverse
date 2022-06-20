@@ -10,8 +10,8 @@ public class Scanning : State
     [SerializeField] private ARRaycastManager arRaycastManager;
     [SerializeField] private ARPlaneManager arPlaneManager;
     
-    [Header("Spawnable Prefab")]
-    [SerializeField] private GameObject cratePrefab;
+    [Header("Prefabs")]
+    [SerializeField] private GameObject lootBoxPrefab;
     
     [Header("UI Elements")]
     [SerializeField] private GameObject scanPanel;
@@ -20,9 +20,12 @@ public class Scanning : State
     [Header("Editor Debug")] [SerializeField]
     private FreeLookBehaviour freeLookBehaviour;
 
+    // Components
     private GameManager _gameManager;
-    private readonly List<ARRaycastHit> _raycastHits = new List<ARRaycastHit>();
     private Camera _arCamera;
+    
+    // Control vars
+    private readonly List<ARRaycastHit> _raycastHits = new List<ARRaycastHit>();
 
     private void Awake()
     {
@@ -81,7 +84,7 @@ public class Scanning : State
                 {
                     if (Physics.Raycast(ray, out hit))
                     {
-                        SpawnPrefab(_raycastHits[0].pose.position);
+                        SpawnLootBox(_raycastHits[0].pose.position);
                         ChangeState("Shooting");
                     }
                 }
@@ -91,36 +94,34 @@ public class Scanning : State
         {
             if (Input.GetMouseButtonDown(0))
             {
-                DebugSpawnPrefab();
+                DebugSpawnLootBox();
                 ChangeState("Shooting");
             }
         }
     }
 
-    private void SpawnPrefab(Vector3 spawnPosition)
+    private void SpawnLootBox(Vector3 spawnPosition)
     {
-        GameObject obj = Instantiate(cratePrefab, spawnPosition, Quaternion.identity);
+        GameObject obj = Instantiate(lootBoxPrefab, spawnPosition, Quaternion.identity);
         
         Vector3 rot = Quaternion.LookRotation(_arCamera.transform.position - obj.transform.position).eulerAngles;
         rot.x = rot.z = 0;
         obj.transform.rotation = Quaternion.Euler(rot);
-
+        
         _gameManager.SetSpawnedObject(obj);
-        _gameManager.PlaySpawnedObjectSound();
     }
     
-    private void DebugSpawnPrefab()
+    private void DebugSpawnLootBox()
     {
         var spawnPos = new Vector3(_arCamera.transform.position.x, _arCamera.transform.position.y,
             _arCamera.transform.position.z + 0.5f);
         
-        GameObject obj = Instantiate(cratePrefab, spawnPos, Quaternion.identity);
+        GameObject obj = Instantiate(lootBoxPrefab, spawnPos, Quaternion.identity);
         
         Vector3 rot = Quaternion.LookRotation(_arCamera.transform.position - obj.transform.position).eulerAngles;
         rot.x = rot.z = 0;
         obj.transform.rotation = Quaternion.Euler(rot);
 
         _gameManager.SetSpawnedObject(obj);
-        _gameManager.PlaySpawnedObjectSound();
     }
 }
