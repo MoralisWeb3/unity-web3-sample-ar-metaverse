@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Numerics;
 using Cysharp.Threading.Tasks;
 using MoralisUnity;
 using Nethereum.Hex.HexTypes;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using WalletConnectSharp.Unity;
 using State = Pixelplacement.State;
 
@@ -17,7 +14,6 @@ public class Minting : State
     [SerializeField] private WalletConnect walletConnect;
 
     [Header("UI Elements")]
-    [SerializeField] private Button openWalletButton;
     [SerializeField] private TextMeshProUGUI statusText;
 
     private GameManager _gameManager;
@@ -61,6 +57,7 @@ public class Minting : State
             return;
         }
     
+        // We tell the GameManager what we minted the item successfully
         statusText.text = "Transaction completed!";
         _gameManager.itemTokenId = _currentTokenId.ToString();
         _gameManager.isItemMinted = true;
