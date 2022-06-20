@@ -36,6 +36,7 @@ public class Minting : State
         if (GameManager.ContractAddress == string.Empty || GameManager.ContractAbi == string.Empty)
         {
             Debug.LogError("You need the Contract Address AND the ABI to continue!");
+            ChangeState("Viewing");
             return;
         }
         
