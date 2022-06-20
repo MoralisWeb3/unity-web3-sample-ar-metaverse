@@ -108,7 +108,7 @@ public class Scanning : State
         rot.x = rot.z = 0;
         obj.transform.rotation = Quaternion.Euler(rot);
         
-        _gameManager.SetSpawnedObject(obj);
+        _gameManager.SetCurrentLootBox(obj);
     }
     
     private void DebugSpawnLootBox()
@@ -122,6 +122,6 @@ public class Scanning : State
         rot.x = rot.z = 0;
         obj.transform.rotation = Quaternion.Euler(rot);
 
-        _gameManager.SetSpawnedObject(obj);
+        _gameManager.SetCurrentLootBox(obj);
     }
 }

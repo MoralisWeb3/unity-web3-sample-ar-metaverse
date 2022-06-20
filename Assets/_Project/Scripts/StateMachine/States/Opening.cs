@@ -20,7 +20,7 @@ public class Opening : State
     {
         MetaverseItem.Ready += GoToViewing;
         
-        var spawnedObject = _gameManager.GetSpawnedObject();
+        var spawnedObject = _gameManager.GetCurrentLootBox();
 
         try
         {

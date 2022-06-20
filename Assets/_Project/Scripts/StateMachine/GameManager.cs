@@ -19,16 +19,16 @@ public class GameManager : StateMachine
         SceneManager.LoadScene(0);
     }
 
-    public void SetSpawnedObject(GameObject obj)
+    public void SetCurrentLootBox(GameObject obj)
     {
         currentLootBox = obj;
     }
 
-    public GameObject GetSpawnedObject()
+    public GameObject GetCurrentLootBox()
     {
         if (currentLootBox is null)
         {
-            Debug.Log("No spawned gameObject!");
+            Debug.Log("No loot box spawned!");
             return null;
         }
         
