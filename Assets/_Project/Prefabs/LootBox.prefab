@@ -545,7 +545,7 @@ PrefabInstance:
     - target: {fileID: 1904092122857414486, guid: bd0d623fbc5260a4ea3609ed316dee11,
         type: 3}
       propertyPath: m_Name
-      value: CrateButton
+      value: LootBoxButton
       objectReference: {fileID: 0}
     - target: {fileID: 1904092122857414487, guid: bd0d623fbc5260a4ea3609ed316dee11,
         type: 3}
@@ -635,7 +635,7 @@ PrefabInstance:
     - target: {fileID: 1904092122857414486, guid: bd0d623fbc5260a4ea3609ed316dee11,
         type: 3}
       propertyPath: m_Name
-      value: CrateButton (2)
+      value: LootBoxButton3
       objectReference: {fileID: 0}
     - target: {fileID: 1904092122857414487, guid: bd0d623fbc5260a4ea3609ed316dee11,
         type: 3}
@@ -725,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 1904092122857414486, guid: bd0d623fbc5260a4ea3609ed316dee11,
         type: 3}
       propertyPath: m_Name
-      value: CrateButton (1)
+      value: LootBoxButton2
       objectReference: {fileID: 0}
     - target: {fileID: 1904092122857414487, guid: bd0d623fbc5260a4ea3609ed316dee11,
         type: 3}
