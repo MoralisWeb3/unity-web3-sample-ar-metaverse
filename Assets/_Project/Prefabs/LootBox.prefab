@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 1894954703248168534}
   - component: {fileID: 2006094927204756360}
   m_Layer: 3
-  m_Name: Container
+  m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 813616562}
   - component: {fileID: 850369272341274208}
   m_Layer: 3
-  m_Name: Crate
+  m_Name: LootBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6162879444696984142}
   m_Layer: 3
-  m_Name: SmokeParticle
+  m_Name: SmokePS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
