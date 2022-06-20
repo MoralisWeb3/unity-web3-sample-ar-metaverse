@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Crate : MonoBehaviour
+public class LootBox : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private AudioSource audioSource;
@@ -14,12 +14,12 @@ public class Crate : MonoBehaviour
     
     private void OnEnable()
     {
-        CrateButton.Triggered += Open;
+        LootBoxButton.Triggered += Open;
     }
 
     private void OnDisable()
     {
-        CrateButton.Triggered -= Open;
+        LootBoxButton.Triggered -= Open;
     }
     
     public void Open()

@@ -7,7 +7,7 @@ public class Opening : State
     [SerializeField] private MetaverseItem metaverseItem;
     
     private GameManager _gameManager;
-    private Crate _crate;
+    private LootBox _lootBox;
 
     private Transform _originT;
 
@@ -24,7 +24,7 @@ public class Opening : State
 
         try
         {
-            _crate = spawnedObject.GetComponent<Crate>();
+            _lootBox = spawnedObject.GetComponent<LootBox>();
         }
         catch (Exception e)
         {
@@ -32,8 +32,8 @@ public class Opening : State
             throw;
         }
         
-        _crate.Open();
-        _originT = _crate.GetCenterTransform();
+        _lootBox.Open();
+        _originT = _lootBox.GetCenterTransform();
 
         Instantiate(metaverseItem, spawnedObject.transform);
     }

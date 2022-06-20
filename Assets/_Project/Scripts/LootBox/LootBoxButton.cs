@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class CrateButton : MonoBehaviour
+public class LootBoxButton : MonoBehaviour
 {
     public static Action Triggered;
 
