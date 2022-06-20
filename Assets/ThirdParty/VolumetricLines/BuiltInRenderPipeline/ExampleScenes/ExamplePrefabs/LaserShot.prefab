@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 10825254}
   - component: {fileID: 9180925830733752864}
   m_Layer: 0
-  m_Name: shot_prefab
+  m_Name: LaserShot
   m_TagString: LaserShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
