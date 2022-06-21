@@ -29,6 +29,8 @@ public class MetaverseItem : MonoBehaviour
     
     // Control vars
     private Vector3 _initScale;
+    private bool _tweenCompleted;
+    private bool _imageLoaded;
 
     private void Awake()
     {
@@ -53,11 +55,18 @@ public class MetaverseItem : MonoBehaviour
         Tween.LocalScale(transform, _initScale, 3f, 0, Tween.EaseOut, Tween.LoopType.None, null, () =>
         {
             // Now We do it when we have retrieved all data from IPFS
+            _tweenCompleted = true;
+            CheckIfReady();
         });
     }
 
-    private void ImReady()
+    private void CheckIfReady()
     {
+        if (!_tweenCompleted || !_imageLoaded)
+        {
+            // We are only ready if tween has completed and we have loaded the image sucessfully
+            return;
+        }
         _sphereCollider.enabled = true;
         Ready?.Invoke(this);
     }
@@ -106,7 +115,8 @@ public class MetaverseItem : MonoBehaviour
             spriteRenderer.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), tex.height);
             
             // When the tween is completed, we enable the collider and we shout WE'RE READY!!
-            ImReady();
+            _imageLoaded = true;
+            CheckIfReady();
             
             uwr.Dispose();
         }

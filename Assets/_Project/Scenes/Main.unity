@@ -354,8 +354,8 @@ MonoBehaviour:
   OnLastStateExited:
     m_PersistentCalls:
       m_Calls: []
-  spawnedLootBox: {fileID: 0}
-  metaverseItem: {fileID: 0}
+  currentLootBox: {fileID: 0}
+  currentMetaverseItem: {fileID: 0}
   isItemMinted: 0
   itemTokenId: 
 --- !u!114 &129032817
