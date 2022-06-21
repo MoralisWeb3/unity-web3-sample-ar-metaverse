@@ -14,7 +14,7 @@ This week we bring you a tutorial about how to create an AR Metaverse with Unity
 See [docs.moralis.io/unity](https://docs.moralis.io/unity) for more info.
 
 **Configuration**
-* `Platform Target` - Standalone MAC/PC & WebGL
+* `Platform Target` - Android
 * `Unity Version` - [2021.3.4f1 LTS](https://unity3d.com/unity/qa/lts-releases?version=2021.3)
 * `Render Pipeline` - [Built-in Render Pipeline](https://docs.unity3d.com/Manual/built-in-render-pipeline.html)
 
