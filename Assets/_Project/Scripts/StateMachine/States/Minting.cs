@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Numerics;
 using Cysharp.Threading.Tasks;
 using MoralisUnity;
@@ -15,6 +16,7 @@ public class Minting : State
 
     [Header("UI Elements")]
     [SerializeField] private TextMeshProUGUI statusText;
+    [SerializeField] private GameObject cancelButton;
 
     private GameManager _gameManager;
 
@@ -41,8 +43,16 @@ public class Minting : State
         }
         
         MintNft(_gameManager.currentMetaverseItem.ipfsMetadataUrl);
+
+        // If we get stuck at the minting process for any reason, we need to be able to leave the state.
+        StartCoroutine(EnableCancelButton());
     }
-    
+
+    private void OnDisable()
+    {
+        cancelButton.SetActive(false);
+    }
+
     private async void MintNft(string metadataUrl)
     {
         statusText.text = "Please confirm transaction in your wallet";
@@ -54,7 +64,7 @@ public class Minting : State
             statusText.text = "Transaction failed";
             _gameManager.isItemMinted = false;
             
-            ChangeState("Viewing");
+            GoToViewing();
             return;
         }
     
@@ -63,7 +73,7 @@ public class Minting : State
         _gameManager.itemTokenId = _currentTokenId.ToString();
         _gameManager.isItemMinted = true;
         
-        ChangeState("Viewing");
+        GoToViewing();
     }
     
     private async UniTask<string> ExecuteMinting(string metadataUrl)
@@ -97,5 +107,17 @@ public class Minting : State
     private void OpenMobileWallet()
     {
         walletConnect.OpenMobileWallet();
+    }
+
+    private IEnumerator EnableCancelButton()
+    {
+        yield return new WaitForSeconds(5f);
+        
+        cancelButton.SetActive(true);
+    }
+
+    public void GoToViewing()
+    {
+        ChangeState("Viewing");
     }
 }

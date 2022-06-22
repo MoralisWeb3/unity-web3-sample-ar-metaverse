@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OPEN
+  m_text: CANCEL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f86bd326d5fd8e42b54baf3d003a5eb, type: 2}
   m_sharedMaterial: {fileID: -3075842231282137153, guid: 8f86bd326d5fd8e42b54baf3d003a5eb,
@@ -3276,7 +3276,7 @@ GameObject:
   - component: {fileID: 1296579831}
   - component: {fileID: 1296579830}
   m_Layer: 0
-  m_Name: OpenWalletButton
+  m_Name: CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3346,7 +3346,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1296579831}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2107060407}
+        m_TargetAssemblyTypeName: Minting, Assembly-CSharp
+        m_MethodName: GoToViewing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1296579831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5297,6 +5309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walletConnect: {fileID: 1986768647}
   statusText: {fileID: 1638543615}
+  cancelButton: {fileID: 1296579828}
 --- !u!4 &212175866532230322
 Transform:
   m_ObjectHideFlags: 0
